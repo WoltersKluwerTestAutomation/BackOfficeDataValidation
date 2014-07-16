@@ -18,6 +18,9 @@ namespace WkBackOfficeTests.Support
 
         public static IWebDriver Driver = null;
 
+
+
+        // Initialize the Selenium Driver
         public void InitializeDriver()
         {
 
