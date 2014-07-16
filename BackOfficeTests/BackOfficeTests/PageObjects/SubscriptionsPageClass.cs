@@ -30,16 +30,20 @@ namespace WkBackOfficeTests.PageObjects
         [FindsBy(How = How.Id, Using = "subs_no")]
         public IWebElement Subsno { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@id='item_number']")]
+        public IWebElement Itemno { set; get; }
 
 
 
-        public void ApplyFiltersOnSubscriptions(string subsno)
+
+        public void ApplyFiltersOnSubscriptions(string subsno, string itemno)
         {
 
             SubscriptionItems.Click();
             WaitForPageToLoad();
             Subsno.Clear();
             Subsno.SendKeys(subsno);
+            Itemno.SendKeys(itemno);
             ApplyFilters.Click();
 
             Thread.Sleep(2000);
